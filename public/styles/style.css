@@ -35,7 +35,6 @@ body {
 	line-height: 1;
     background: url('../images/main-page.jpg') no-repeat center center fixed; 
 	background-size: cover;
-	/* background-color: blue; */
 	margin: 20px;
 	display: flex;
 	justify-content: center;
@@ -52,8 +51,8 @@ body {
 	top: 5%;
 	left: 3%;
 	overflow: auto;
-	/* -webkit-backdrop-filter: blur(15px);
-	backdrop-filter: blur(15px); */
+	-webkit-backdrop-filter: blur(15px);
+	backdrop-filter: blur(15px);
 	border-radius: 10px;
 	border: 2px solid blue;
 }

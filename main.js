@@ -11,20 +11,22 @@ $(document).ready(function () {
                         }
                     }))
                 response(data)
-                //console.log(response)
+                console.log(response)
         },
-        minLength: 2,
+        minLength: 0,
         select: function(event, ui) {
             console.log(ui.item.id)
             fetch(`http://localhost:8000/get/${ui.item.id}`)
                 .then(result => result.json())
                 .then(result => {
                     $('#description').empty()
-                    result.description.forEach(description =>
-                        {
-                            $("#description").append(`<p>${description}</p>`)
-                        })
-                        // $('img').attr('src',result.poster)
+                        $("#description").append(`<p>${result.description}</p>`)
+                    $('.visitors').empty()
+                        $('.visitors').append(`<span>${result.visitors}</span>`)
+                    $('.location').empty()
+                        $('.location').append(`<span>${result.states[0].title}</span>`)
+                    
+                    // $('img').attr('src',result.poster)
                 })
         }
     })

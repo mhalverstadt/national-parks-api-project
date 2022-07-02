@@ -27,21 +27,23 @@ app.get('/search', async (request, response) => {
     try{
         let result = await collection.aggregate([
             {
-                "$Search" : {
+                "$search" : {
                     "autocomplete" : {
                         "query" : `${request.query.query}`,
                         "path" : "title",
                         "fuzzy" : {
                             "maxEdits" : 2,
-                            "prefixLength" : 2
+                            "prefixLength" : 0
                         }
                     }
                 }
             }
         ]).toArray()
         response.send(result)
+        // console.log(result)
     }catch (error){
         response.status(500).send({message: error.message})
+        console.log(error)
     }
 })
 
