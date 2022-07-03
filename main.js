@@ -19,13 +19,15 @@ $(document).ready(function () {
             fetch(`http://localhost:8000/get/${ui.item.id}`)
                 .then(result => result.json())
                 .then(result => {
+                    console.log(result.image.url)
                     $('#description').empty()
                         $("#description").append(`<p>${result.description}</p>`)
                     $('.visitors').empty()
                         $('.visitors').append(`<span>${result.visitors}</span>`)
                     $('.location').empty()
                         $('.location').append(`<span>${result.states[0].title}</span>`)
-                    
+                    $('body').css("background-image", `url(${result.image.url})`);
+                    // $('body').attr('background',result.image.url)
                     // $('img').attr('src',result.poster)
                 })
         }

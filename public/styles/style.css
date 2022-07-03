@@ -43,8 +43,7 @@ body {
 
 /* /////////////Selection Box//////////// */
 .ui-widget {
-	width: 90%;
-	height: 20%;
+	width: 40%;
 	margin: auto;
 	display: block;
 	position:absolute;
@@ -54,7 +53,7 @@ body {
 	-webkit-backdrop-filter: blur(15px);
 	backdrop-filter: blur(15px);
 	border-radius: 10px;
-	border: 2px solid blue;
+	border: 1px solid black;
 }
 
 	h1, input {
@@ -64,10 +63,14 @@ body {
 		color: black;
 	}
 
+	h1 {
+		color: white;
+	}
+
 	input {
 		font-size: 1rem;
 		margin: auto;
-		width: 80%;
+		width: 40%;
 		height: 1rem;
 	}
 
