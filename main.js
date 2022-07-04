@@ -20,6 +20,7 @@ $(document).ready(function () {
                 .then(result => result.json())
                 .then(result => {
                     console.log(result.image.url)
+                    $('.info').css("display", "block")
                     $('#description').empty()
                         $("#description").append(`<p>${result.description}</p>`)
                     $('.visitors').empty()
