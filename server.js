@@ -56,8 +56,7 @@ app.get("/get/:id", async (request, response) =>{
     }catch (error){
         response.status(500).send({message: error.message})
     }
-}
-)
+})
 
 app.listen(process.env.PORT || PORT, () => {
     console.log('Server is running.')

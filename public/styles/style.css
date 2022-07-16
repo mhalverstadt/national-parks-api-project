@@ -43,7 +43,7 @@ body {
 
 /* /////////////Selection Box//////////// */
 .ui-widget {
-	width: 40%;
+	width: 35%;
 	margin: auto;
 	display: block;
 	position:absolute;
@@ -55,6 +55,18 @@ body {
 	border-radius: 10px;
 	/* border: 1px solid black; */
 }
+		@media screen and (max-width: 400px){
+			.ui-widget{
+				width: 65%;
+			}
+		}
+
+		@media screen and (max-width: 700px){
+			.ui-widget{
+				width: 50%;
+			}
+		}
+
 
 	h1, input {
 		font-weight: bold;
