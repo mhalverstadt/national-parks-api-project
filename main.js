@@ -28,8 +28,6 @@ $(document).ready(function () {
                     $('.location').empty()
                         $('.location').append(`<span>${result.states[0].title}</span>`)
                     $('body').css("background-image", `url(${result.image.url})`);
-                    // $('body').attr('background',result.image.url)
-                    // $('img').attr('src',result.poster)
                 })
         }
     })

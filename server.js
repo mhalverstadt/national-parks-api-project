@@ -33,7 +33,7 @@ app.get('/search', async (request, response) => {
                         "path" : "title",
                         "fuzzy" : {
                             "maxEdits" : 2,
-                            "prefixLength" : 0
+                            "prefixLength" : 1
                         }
                     }
                 }
