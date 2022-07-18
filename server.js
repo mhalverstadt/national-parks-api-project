@@ -23,6 +23,10 @@ app.use(express.urlencoded({extended : true}))
 app.use(express.json())
 app.use(cors())
 
+app.get('/', (req, res)=>{
+    res.sendFile(__dirname + '/index.html')
+})
+
 app.get('/search', async (request, response) => {
     try{
         let result = await collection.aggregate([
