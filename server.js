@@ -12,26 +12,30 @@ let db,
     dbName = 'nationalParksDB',
     collection
 
+
 MongoClient.connect(dbConnectionStr)
     .then(client => {
         console.log('Connected to database')
         db = client.db(dbName)
         collection = db.collection('Parks')
+
+        //Middlewares
+        app.use(express.urlencoded({extended : true}))
+        app.use(express.json())
+        app.use(express.static('public'))
+        app.use(express.json())
+        app.use(cors())
+        
+        app.get('/', async (request, response) => {
+            try {
+                response.sendFile('index.html')
+            } catch (error) {
+                response.status(500).send({message: error.message})
+            }
+        })
     })
 
-app.use(express.urlencoded({extended : true}))
-app.use(express.json())
-app.use(express.static('public'))
-app.use(express.json())
-app.use(cors())
 
-app.get('/', async (request, response) => {
-    try {
-        response.sendFile('index.html')
-    } catch (error) {
-        response.status(500).send({message: error.message})
-    }
-})
 
 app.get('/search', async (request, response) => {
     try{
