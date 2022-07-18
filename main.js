@@ -29,6 +29,6 @@ $(document).ready(function () {
                         $('.location').append(`<span>${result.states[0].title}</span>`)
                     $('body').css("background-image", `url(${result.image.url})`);
                 })
-        }
+            }
     })
 })
