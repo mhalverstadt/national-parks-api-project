@@ -26,12 +26,12 @@ app.use(express.json())
 app.use(cors())
 
 app.get('/', async (request, response) => {
-            try {
-                response.sendFile('index.html')
-            } catch (error) {
-                response.status(500).send({message: error.message})
-            }
-        })
+    try {
+        response.sendFile('index.html')
+    } catch (error) {
+        response.status(500).send({message: error.message})
+    }
+})
 
 app.get('/search', async (request, response) => {
     try{
