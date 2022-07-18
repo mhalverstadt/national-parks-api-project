@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#title').autocomplete({
         source: async function(request,response) {
-            let data= await fetch(`https://national-parks-api-v2.herokuapp.com/search?query=${request.term}`)
+            let data= await fetch(`https://national-parks-api-v2.herokuapp.com/?query=${request.term}`)
                     .then(results => results.json())
                     .then(results => results.map(result => {
                         return {
@@ -28,7 +28,7 @@ $(document).ready(function () {
                     $('.location').empty()
                         $('.location').append(`<span>${result.states[0].title}</span>`)
                     $('body').css("background-image", `url(${result.image.url})`);
-                })
-            }
+            })
+        }
     })
 })
