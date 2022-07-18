@@ -21,10 +21,16 @@ MongoClient.connect(dbConnectionStr)
 
 app.use(express.urlencoded({extended : true}))
 app.use(express.json())
+app.use(express.static('public'))
+app.use(express.json())
 app.use(cors())
 
-app.get('/', (req, res)=>{
-    res.sendFile(__dirname + '/index.html')
+app.get('/', async (request, response) => {
+    try {
+        response.sendFile(__dirname + 'index.html')
+    } catch (error) {
+        response.status(500).send({message: error.message})
+    }
 })
 
 app.get('/search', async (request, response) => {
