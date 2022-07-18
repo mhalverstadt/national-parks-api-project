@@ -27,7 +27,7 @@ app.use(cors())
 
 app.get('/', async (request, response) => {
     try {
-        response.sendFile(__dirname + 'index.html')
+        response.sendFile('index.html')
     } catch (error) {
         response.status(500).send({message: error.message})
     }
