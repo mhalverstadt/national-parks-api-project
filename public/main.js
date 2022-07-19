@@ -16,7 +16,7 @@ $(document).ready(function () {
         minLength: 0,
         select: function(event, ui) {
             console.log(ui.item.id)
-            fetch(`http://localhost:8000/get/${ui.item.id}`)
+            fetch(`https://national-parks-api-v2.herokuapp.com/get/${ui.item.id}`)
                 .then(result => result.json())
                 .then(result => {
                     console.log(result.image.url)
