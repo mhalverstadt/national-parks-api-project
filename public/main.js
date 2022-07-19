@@ -1,8 +1,7 @@
 $(document).ready(function () {
     $('#title').autocomplete({
         source: async function(request,response) {
-            // search?query=
-            let data= await fetch(`https://national-parks-api-v2.herokuapp.com/${request.term}`)
+            let data= await fetch(`https://national-parks-api-v2.herokuapp.com/search?query=${request.term}`)
                     .then(results => results.json())
                     .then(results => results.map(result => {
                         return {
