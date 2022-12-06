@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#title').autocomplete({
         source: async function(request,response) {
-            let data= await fetch(`https://national-parks-api-v2.herokuapp.com/search?query=${request.term}`)
+            let data= await fetch(`https://national-parks-api.cyclic.app/search?query=${request.term}`)
                     .then(results => results.json())
                     .then(results => results.map(result => {
                         return {
@@ -13,10 +13,10 @@ $(document).ready(function () {
                 response(data)
                 console.log(response)
         },
-        minLength: 0,
+        minLength: 1,
         select: function(event, ui) {
             console.log(ui.item.id)
-            fetch(`https://national-parks-api-v2.herokuapp.com/get/${ui.item.id}`)
+            fetch(`https://national-parks-api.cyclic.app/get/${ui.item.id}`)
                 .then(result => result.json())
                 .then(result => {
                     console.log(result.image.url)
